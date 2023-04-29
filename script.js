@@ -77,7 +77,11 @@ function showRiddle() {
  */
 
 function revealAnswers() {
-  document.getElementById("answer").style.display = "block" // to show 
+  if (!document.getElementById("question").innerHTML) {
+    alert("Generate a riddle first!")
+  } else {
+    document.getElementById("answer").style.display = "block" // to show 
+  };
 }
 
 /**
