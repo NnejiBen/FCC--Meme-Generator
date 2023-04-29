@@ -29,7 +29,6 @@ body {
   }
   
   .attribution {
-    position: absolute;
     right: 20px;
     bottom: 20px;
     font-size: 0.8rem;
@@ -95,3 +94,41 @@ body {
     color: white;
     background-color: transparent;
   }
+
+  /* RESPONSIVE MODE */
+
+@media (max-width: 768px) {
+ 
+  main {
+    flex-direction: column-reverse;
+  }
+
+  .content {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 0 16px 16px 16px;
+    border-left: none;
+    border-bottom: 1px dotted #bfa38a;
+    height: auto;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    margin: 5px 0;
+    height: 32px;
+  }
+
+  .attribution {
+    right: 20px;
+    left: 20px;
+    bottom: 20px;
+  }
+}
