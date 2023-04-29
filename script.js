@@ -3,7 +3,13 @@
  * prior to generating new random content
  */
 function clearAll() {
-  // document.getElementsByClassName("content").innerText = "";
+  // document.getElementById("meme").src = "";
+  document.getElementById("meme").style.display = "none";
+  document.getElementById("joke").innerText = "";
+  document.getElementById("quote").innerHTML = "";
+  document.getElementById("author").innerHTML = "";
+  document.getElementById("question").innerHTML = "";
+  document.getElementById("answer").innerHTML = "";
 }
 
 /**
@@ -12,10 +18,14 @@ function clearAll() {
  * - Never show more than 1 meme at a time
  */
 
+document.getElementById("meme").style.display = "none";  // to hide
+ 
 function showMeme() {
   // Value is a string representing image URL
   const randomMemeUrl = getRandomData("memes"); 
-  document.getElementById('meme').src = randomMemeUrl;
+  clearAll();
+  document.getElementById("meme").src = randomMemeUrl;
+  document.getElementById("meme").style.display = "block";  // to show 
 }
 
 /**
@@ -26,6 +36,7 @@ function showMeme() {
 function showJoke() {
   // Value is a string representing the joke
   const randomJokeText = getRandomData("jokes");
+  clearAll();
   document.getElementById("joke").innerText = randomJokeText;
 }
 
@@ -37,6 +48,7 @@ function showJoke() {
 function showQuote() {
   // Value should be in format: { quote: '', author: '' }
   const randomQuote = getRandomData("quotes");
+  clearAll();
   document.getElementById("quote").innerHTML = "Quote: " + "'" + randomQuote.quote + "'";
   document.getElementById("author").innerHTML = "Author: " + "'" + randomQuote.author + "'";
 }
@@ -50,6 +62,7 @@ function showQuote() {
 function showRiddle() {
   // Value should be in format: { question: '', answer: '' }
   const randomRiddle = getRandomData("riddles");
+  clearAll();
   document.getElementById("question").innerHTML = randomRiddle.question;
   document.getElementById("answer").innerHTML = randomRiddle.answer;
   document.getElementById("answer").style.display = "none";  // to hide
